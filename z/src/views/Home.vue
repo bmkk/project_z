@@ -1,17 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your"/>
+    <myheader/>
+    <Carousel/>
+    <goods/>
+    <myfooter/>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src----@是/SRC的别名
-import HelloWorld from '@/components/HelloWorld.vue'
+import myheader from "@/components/Header.vue";//引入顶部导航--子组件
+import myfooter from "@/components/Footer.vue";//引入顶部导航--子组件
+import Carousel from "@/components/Carousel.vue";//引入轮播图--子组件
+import goods from "@/components/Goods.vue";//引入商品模块--子组件
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    HelloWorld
+    myheader,Carousel,goods,myfooter
   }
-}
+};
 </script>
+<style scoped>
+  .home{
+      background-color: #ededed;
+  }
+</style>
+
