@@ -20,7 +20,7 @@ export default {
 .myfooter{
     width: 100%;
     height: 355px;
-    background-color: #ffffff;
+    background-color: #fafafa;
     box-sizing: border-box;
     margin-top: 15px; 
 }

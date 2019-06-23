@@ -3,7 +3,9 @@
     <div class="header">
       <div class="header_logo">logo</div>
       <div class="header_nav">导航</div>
-      <div class="header_login">登录</div>
+      <div class="header_login">
+        <router-link class="toLogin" to="/login">登录|注册</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +23,8 @@ export default {
   display: flex;
   box-sizing: border-box;
   height: 50px;
+background-color: black;
+  padding: 0 4%;
   color: #fff;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -40,6 +44,10 @@ height: 50px;
 }
 .header > div:nth-child(3) {
   width: 10%;
-  background-color: rgb(40, 19, 133);
+ 
+}
+.toLogin{
+ color: #fff;
+ text-decoration: none;
 }
 </style>
