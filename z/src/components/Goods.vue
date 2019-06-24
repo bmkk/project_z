@@ -3,19 +3,22 @@
     <div class="goods-box">
       <div class="goods-nav">
         <div class="goods-title">
-          <div class="active">热卖商品</div>
           <div v-for="(item,i) in types" :key="i">{{item}}</div>
-          <div>更多</div>
         </div>
-        <div class="goods-search">
-          <input type="text" placeholder="输入你想要查找的食品">
-          <router-link to="/shoplist">搜索</router-link>
+        <div class="goods-all">
+          <router-link class="toall" to="/shoplist">查看全部</router-link>
         </div>
+      </div>
+      <div class="gds-class">
+          <div v-for="(item,i) in gdsclass" :key="i">
+              {{item}}
+          </div>
       </div>
       <div class="goods-type">
        <div class="goods-item">
           <div v-for="(item,i) in goods" :key="i">
-              <img src="@/assets/goods/6.jpg">
+              <img src="">
+              <div>这是文字</div>
           </div>
         </div>
       </div>
@@ -28,7 +31,8 @@ export default {
   name: "goods",
   data() {
     return {
-      types:['鸡肉','鸭肉','牛肉','鱼干'],
+      types:['默认','最新','最热'],
+      gdsclass:['盛夏美食清单','美容日用','品质家电'],
       goods: [
         {img_url:'@/assets/goods/1.jpg'},
         {img_url:'@/assets/goods/2.jpg'},
@@ -48,13 +52,29 @@ export default {
 }
 .goods-nav {
   display: flex;
-  padding: 15px 0;
+  padding: 15px 0 5px;
   justify-content: space-between;
+  border-bottom: 2px solid #000;
+}
+.goods-all .toall{
+  text-decoration: none;
+  background-color: #fff;
+  padding: 5px 20px ;
+  border-radius:15px; 
+
+}
+.gds-class{
+  display: flex;
+  padding: 10px 0;
+}
+.gds-class div{
+  padding:0 15px;
 }
 .goods-title{
   display: flex;
   align-items: center;
   padding-left:10px;
+  border-left: 3px solid #000;
 }
 .goods-title div{
   margin-right: 50px;
@@ -63,20 +83,6 @@ export default {
   font-size: 20px;
   padding: 5px 0;
 }
-.active{
-  font-weight: bold;
-}
-.goods-search input{
-   outline: none;
-   border: none;
-   /* border-radius: 20px; */
-   width: 220px;
-   height: 30px;
-   line-height: 30px;
-   padding-left:15px; 
-   margin-right: 15px;
-
-   }
 .goods-item-list {
   padding: 5px 0;
   display: flex;
@@ -100,9 +106,16 @@ export default {
   height: 385px;
   overflow: hidden;
   padding: 5px 0;
+
 }
 .goods-item > div > img {
   width: 100%;
-  height: 100%;
+  height: 305px;
+    border-radius: 15px;
+}
+.goods-item > div > div {
+  height: 80px;
+   width: 100%;
+  background-color: #fff
 }
 </style>

@@ -1,3 +1,4 @@
+// 品质保证组件
 <template>
   <div class="make">
        <div v-for="(a,i) of makes" :key="i">
